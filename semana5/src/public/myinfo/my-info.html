@@ -1,0 +1,28 @@
+<div class="container">
+  <div ng-if=myinfoCtl.user >
+     First Name:    {{myinfoCtl.user.firstname}}<br>
+     Last Name:     {{myinfoCtl.user.lastname}}<br>
+     Phone Number:  {{myinfoCtl.user.phone}}<br>
+     email:         {{myinfoCtl.user.email}}<br>
+     Favorite Item: <br>
+    <div>
+      <div>{{myinfoCtl.menuItem.short_name}}</div>
+      <img width="250" height="150" ng-src="{{myinfoCtl.basePath}}/images/{{myinfoCtl.menuItem.short_name}}.jpg" alt="{{myinfoCtl.menuItem.name}}">
+    </div>
+    <div class="menu-item-price">{{myinfoCtl.menuItem.price_small | currency}}
+      <span> {{myinfoCtl.menuItem.small_portion_name}}</span>
+      {{myinfoCtl.menuItem.price_large | currency}}
+      <span>{{myinfoCtl.menuItem.large_portion_name}}</span>
+    </div>
+    <div class="menu-item-description">
+      <h3 class="menu-item-title">{{myinfoCtl.menuItem.name}}</h3>
+      <p class="menu-item-details">{{myinfoCtl.menuItem.description}}</p>
+    </div>
+  </div>
+  <div ng-if=!myinfoCtl.user>
+    Not Signed Up Yet.
+    <a ui-sref="public.signup">
+        <span>Sign up Now!</span>
+   </a>
+  </div>
+</div>
